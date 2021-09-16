@@ -36,7 +36,7 @@ export class CartService {
      + '/quantity/' + quantity, {})
   }
 
-  public delete(sweetId: number) {
-    // return this.httpClient.delete<CartItem>(this.baseUrl + sweetId);
+  public delete(cartId: number):Observable<Cart> {
+    return this.httpClient.delete<Cart>(this.baseUrl + 'cart/' + cartId + '/empty');
   }
 }

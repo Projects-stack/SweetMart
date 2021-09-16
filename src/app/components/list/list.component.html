@@ -21,7 +21,7 @@
               <td>{{ sweetItem.quantity }}</td>
               <td>{{ sweetItem.price }}</td>
               <td>{{ sweetItem.description }}</td>
-              <td><button class="btn btn-danger" (click)="onDelete(i)">Delete</button></td>
+              <td><button class="btn btn-danger" (click)="onDelete(cart.cartItems[i].cartItemId, i)">Delete</button></td>
           </tr>
       </tbody>
     </table>

@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
 
     this.cartService.cartId.subscribe((cartId) => {
       this.cartService.getCart(cartId).subscribe((cart) => {
+        this.cart = cart;
         for(let i=0; i<cart.cartItems.length; i++) {
           this.sweetItems.push(cart.cartItems[i].sweetItem)
           this.sweetItems[i].quantity = cart.cartItems[i].quantity;
@@ -30,8 +31,9 @@ export class ListComponent implements OnInit {
     
   }
 
-  onDelete(index: number): void {
-    
+  onDelete(id: number, i: number): void {
+    this.cartService.delete(id).subscribe();
+    // this.sweetItems.splice(i);
   }
 
 }
